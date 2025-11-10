@@ -1,5 +1,5 @@
 <?php
-define("_BOOKS_IMAGES_FOLDER_", "/uploads/books/");
-define("_ASSETS_IMAGES_FOLDER_", "/assets/images/");
-define("_HOME_BOOK_LIMIT_", 3);
-define("_ITEM_PER_PAGE_", 9);
+define("ROLE_USER", "user");
+define("ROLE_ADMIN", "admin");
+define("MOVIES_IMAGES_FOLDER", "/uploads/movies/");
+define("ASSETS_IMAGES_FOLDER", "/assets/images/");
