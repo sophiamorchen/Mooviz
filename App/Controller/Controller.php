@@ -11,13 +11,17 @@ class Controller
                 switch ($_GET['controller']) {
                     case 'page':
                         //charger controleur page
-                        $pageController = new PageController();
-                        $pageController->route();
+                        $controller = new PageController();
+                        $controller->route();
                         break;
-                    case 'book':
-                        //charger controleur book
-                        $pageController = new BookController();
-                        $pageController->route();
+                    case 'auth':
+                        //charger controleur auth
+                        $controller = new AuthController();
+                        $controller->route();
+                        break;
+                    case 'user':
+                        $controller = new UserController();
+                        $controller->route();
                         break;
                     default:
                         throw new \Exception("Le controleur n'existe pas");
@@ -25,8 +29,8 @@ class Controller
                 }
             } else {
                 //Chargement la page d'accueil si pas de controleur dans l'url
-                $pageController = new PageController();
-                $pageController->home();
+                $controller = new PageController();
+                $controller->home();
             }
         } catch (\Exception $e) {
             $this->render('errors/default', [
