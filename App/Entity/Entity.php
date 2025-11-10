@@ -28,6 +28,9 @@ class Entity
                         $value = new \DateTime($value);
                     }
                     $this->{$methodName}($value);
+                    // Appel dynamique :
+                    // exemple de résultat :
+                    // $this->setFirstName($value)
                 }
             }
         }

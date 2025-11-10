@@ -50,8 +50,9 @@ class AuthController extends Controller
                     'email' => $user->getEmail(),
                     'first_name' => $user->getFirstName(),
                     'last_name' => $user->getLastName(),
+                    'role' => $user->getRole(),
                 ];
-                header('location: index.php');
+                header('Location: index.php');
             } else {
                 $errors[] = 'Email ou mot de passe incorrect';
             }

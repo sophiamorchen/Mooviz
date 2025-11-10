@@ -36,8 +36,10 @@ class PageController extends Controller
     */
     protected function home()
     {
+        var_dump($_SESSION);
         $this->render('page/home', [
-            'test' => 555
+            'test' => 555,
+            'name' => 'Sophia'
         ]);
 
     }

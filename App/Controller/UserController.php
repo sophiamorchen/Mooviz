@@ -5,7 +5,6 @@ namespace App\Controller;
 use App\Repository\UserRepository;
 use App\Entity\User;
 
-
 class UserController extends Controller
 {
     public function route(): void
@@ -32,7 +31,7 @@ class UserController extends Controller
             ]);
         }
     }
-  
+
     protected function register()
     {
         try {
@@ -41,20 +40,30 @@ class UserController extends Controller
 
             if (isset($_POST['saveUser'])) {
                 //@todo gérer l'inscription utilisateur
+                var_dump($_POST);
+                $user->hydrate($_POST);
+                $user->setRole(ROLE_USER);
+                $errors = $user->validate();
+                var_dump($errors);
+
+                if (empty($errors)) {
+                    $userRepository = new UserRepository();
+                    // Persist fait la sauvegarde en BDD
+                    $userRepository->persist($user);
+                    header('Location: index.php?controller=auth&action=login');
+                    exit; // obligatoire après header
+                }
             }
 
             $this->render('user/add_edit', [
-                'user' => '',
+                'user' => $user,
                 'pageTitle' => 'Inscription',
-                'errors' => ''
+                'errors' => $errors
             ]);
-
         } catch (\Exception $e) {
             $this->render('errors/default', [
                 'error' => $e->getMessage()
             ]);
-        } 
-
+        }
     }
-
 }

@@ -17,7 +17,7 @@ use App\Tools\NavigationTools;
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 
-    <title>Bookeo</title>
+    <title>Mooviz</title>
 </head>
 
 <body>
@@ -30,6 +30,13 @@ use App\Tools\NavigationTools;
                 </li>
             </ul>
 
+            <div class="col-md-3 text-end">
+                <?php if (User::isUser()) { ?>
+                    <a href="index.php?controller=auth&action=addMovie" class="btn btn-primary">Ajouter un film</a>
+                <?php } ?>
+            </div>
+            
+            
             <div class="col-md-3 text-end">
                 <?php if (User::isLogged()) { ?>
                     <a href="index.php?controller=auth&action=logout" class="btn btn-primary">Déconnexion</a>
