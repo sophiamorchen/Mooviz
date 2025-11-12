@@ -14,6 +14,7 @@ class Entity
         $entity = new static();
         $entity->hydrate($data);
         return $entity;
+        // ou bien : return $entity->hydrate($data);
     }
 
     public function hydrate(array $data)
@@ -25,6 +26,10 @@ class Entity
                 $methodName = 'set' . StringTools::toPascalCase($key);
                 if (method_exists($this, $methodName)) {
                     if ($key == 'created_at') {
+                        $value = new \DateTime($value);
+                    } else if ($key == 'release_date'){
+                        $value = new \DateTime($value);
+                    } else if ($key == 'duration'){
                         $value = new \DateTime($value);
                     }
                     $this->{$methodName}($value);

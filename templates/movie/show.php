@@ -1,11 +1,11 @@
 <?php require_once _ROOTPATH_ . '/templates/header.php'; ?>
 
-<h1>Test : <?= $test; ?></h1>
-<h2>Bonjour <?= $name; ?></h2>
+<h1>Le film <?= $movie; ?></h1>
+
 <div class="container col-xxl-8 px-4 py-5">
     <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
-        <div class="col-10 col-sm-8 col-lg-6"> 
-            <img src="/assets/images/default-movie.png" class="d-block mx-lg-auto img-fluid" alt="Book example image" width="700" loading="lazy"> 
+        <div class="col-10 col-sm-8 col-lg-6">
+            <img src="/assets/images/default-movie.png" class="d-block mx-lg-auto img-fluid" alt="Book example image" width="700" loading="lazy">
         </div>
         <div class="col-lg-6">
             <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">Responsive left-aligned hero with image</h1>

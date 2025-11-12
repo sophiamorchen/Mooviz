@@ -44,7 +44,6 @@ class UserController extends Controller
                 $user->hydrate($_POST);
                 $user->setRole(ROLE_USER);
                 $errors = $user->validate();
-                var_dump($errors);
 
                 if (empty($errors)) {
                     $userRepository = new UserRepository();

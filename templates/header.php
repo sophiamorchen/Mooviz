@@ -24,6 +24,7 @@ use App\Tools\NavigationTools;
 
     <div class="container">
         <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+            <img class="" width="200" src="/assets/images/logo-moviz.png" alt="Logo du site">
             <ul class="nav nav-pills">
                 <li class="nav-item">
                     <a href="index.php" class="nav-link px-2 <?= NavigationTools::addActiveClass('page', 'home') ?>">Accueil</a>

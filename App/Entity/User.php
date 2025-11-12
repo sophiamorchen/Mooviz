@@ -3,7 +3,6 @@
 namespace App\Entity;
 
 
-
 class User extends Entity
 {
     protected ?int $id = null;
@@ -12,7 +11,6 @@ class User extends Entity
     protected ?string $first_name = '';
     protected ?string $last_name = '';
     protected ?string $role = '';
-
 
     public function getId(): ?int
     {
