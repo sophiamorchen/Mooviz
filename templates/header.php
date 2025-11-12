@@ -34,10 +34,7 @@ use App\Tools\NavigationTools;
                 <?php if (User::isUser()) { ?>
                     <a href="index.php?controller=auth&action=addMovie" class="btn btn-primary">Ajouter un film</a>
                 <?php } ?>
-            </div>
-            
-            
-            <div class="col-md-3 text-end">
+
                 <?php if (User::isLogged()) { ?>
                     <a href="index.php?controller=auth&action=logout" class="btn btn-primary">Déconnexion</a>
                 <?php } else { ?>
