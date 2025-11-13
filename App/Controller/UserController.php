@@ -40,7 +40,6 @@ class UserController extends Controller
 
             if (isset($_POST['saveUser'])) {
                 //@todo gérer l'inscription utilisateur
-                var_dump($_POST);
                 $user->hydrate($_POST);
                 $user->setRole(ROLE_USER);
                 $errors = $user->validate();
